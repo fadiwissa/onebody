@@ -14,6 +14,7 @@ class Person < ApplicationRecord
   include Concerns::Person::Password
   include Concerns::Person::Relationships
   include Concerns::Person::RoleMemberships
+  include Concerns::Person::GiftMemberships
   include Concerns::Person::MeetingMemberships
   include Concerns::Person::Sharing
   include Concerns::Person::Streamable
@@ -47,9 +48,6 @@ class Person < ApplicationRecord
   has_many :tasks, ->(my) { where('tasks.group_scope is true or tasks.person_id = ? ', my.id) }, through: :groups
   belongs_to :last_seen_stream_item, class_name: 'StreamItem', optional: true
   belongs_to :last_seen_group, class_name: 'Group', optional: true
-
-  has_many :meeting_memberships
-  has_many :meetings, through: :meeting_memberships
 
   scope_by_site_id
 
@@ -144,10 +142,10 @@ class Person < ApplicationRecord
 
   # TODO:: Fadi Wissa - To be exposed in a field
   enum marital_status: {
-    single: 0,
-    married: 1,
-    divorced: 2,
-    widowed: 3
+    Single: 0,
+    Married: 1,
+    Divorced: 2,
+    Widowed: 3
   }
 
   lowercase_attribute :email, :alternate_email

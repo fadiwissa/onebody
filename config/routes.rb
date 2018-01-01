@@ -200,7 +200,7 @@ OneBody::Application.routes.draw do
     resources :imports do
       patch :execute, on: :member
     end
-    resources :updates, :admins, :membership_requests, :roles, :meeting_membership_types
+    resources :updates, :admins, :membership_requests, :roles, :meeting_membership_types, :gifts
     namespace :checkin do
       root to: 'dashboards#show'
       resource :dashboard

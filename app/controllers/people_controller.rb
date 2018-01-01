@@ -122,6 +122,7 @@ class PeopleController < ApplicationController
       redirect_to @family
     elsif @logged_in.can_update?(@person)
       @person.role_ids = params[:person][:role_ids]
+      @person.gift_ids = params[:person][:gift_ids]
       @updater = Updater.new(params)
       if @updater.save!
         respond_to do |format|

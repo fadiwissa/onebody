@@ -217,6 +217,13 @@ en:
       launch: Launch
       list: Reports
       title: Reporting Dashboard
+    gifts:
+      heading: Gifts
+      edit: Edit
+      intro: Create, Edit or Delete Gifts
+      rename: Rename
+      manage: Manage Gifts
+      saved: Gift has been saved
     roles:
       heading: Roles
       edit: Edit
@@ -239,6 +246,7 @@ en:
       button: Manage Admins
     add_individual: Add an individual.
     add_person: Add Person
+    add_gift: Add Gift
     add_role: Add Role
     add_selected: Add Selected
     add_template: Add Template
@@ -322,34 +330,38 @@ en:
         title: Manage Meeting Membership Types
         about: View, edit, delete any Meeting Membership Type.
         order: 9
+      manage_gifts:
+        title: Manage Gifts
+        about: View, edit, delete any gift.
+        order: 10
       manage_roles:
         title: Manage Roles
         about: View, edit, delete any role.
-        order: 10
+        order: 11
       manage_news:
         title: Manage News
         about: View, edit, delete all news.
-        order: 11
+        order: 12
       manage_pictures:
         title: Manage Pictures
         about: View, edit, delete any pictures and albums.
-        order: 12
+        order: 13
       manage_updates:
         title: Manage Updates
         about: View, edit, delete pending profile updates made by users.
-        order: 13
+        order: 14
       manage_sync:
         title: Manage Sync
         about: View and track synchronizations made with UpdateAgent.
-        order: 14
+        order: 15
       import_data:
         title: Import Data
         about: Import data from CSV or by using UpdateAgent.
-        order: 15
+        order: 16
       export_data:
         title: Export Data
         about: Export all site data to XML or CSV.
-        order: 16
+        order: 17
       assign_checkin_cards:
         title: Assign Checkin Cards
         about: Assign card numbers to families.
@@ -364,11 +376,11 @@ en:
       run_reports:
         title: Run Reports
         about: Access the Reporting Dashboard.
-        order: 17
+        order: 18
       manage_reports:
         title: Manage Reports
         about: Create, Edit and Delete Custom Reports.
-        order: 18
+        order: 19
     rest_api_information: To use the REST API with Ruby, you might do this
     settings:
       heading: Site Settings
@@ -1863,6 +1875,15 @@ en:
     complete_message: Your file is complete and ready to download.
     failure_heading: We're sorry...
     failure_message: There seems to have been an error while generating your file.
+  gifts:
+    heading: Gifts
+    edit:
+      heading: Edit Gift
+      required_field: required
+    create:
+      heading: Create a Gift
+      button: Create a Gift
+    created: Gift created
   roles:
     heading: Roles
     edit:

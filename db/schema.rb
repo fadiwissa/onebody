@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171230113919) do
+ActiveRecord::Schema.define(version: 20180101224028) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.datetime "created_at"
@@ -265,6 +265,20 @@ ActiveRecord::Schema.define(version: 20171230113919) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string "job_id", limit: 50
+  end
+
+  create_table "gift_memberships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.integer "person_id"
+    t.integer "gift_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "site_id"
+  end
+
+  create_table "gifts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "group_times", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|

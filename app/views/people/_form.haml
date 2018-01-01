@@ -25,6 +25,8 @@
           %li
             = link_to t('people.edit.person_type'), '#roles', data: { toggle: 'tab' }
           %li
+            = link_to 'Gifts', '#gifts', data: { toggle: 'tab' }
+          %li
             = link_to t('people.edit.status'), '#status', data: { toggle: 'tab' }
           - CustomFieldTab.all.each do |tab|
             %li
@@ -52,6 +54,9 @@
         - if @logged_in.admin?(:edit_profiles)
           .tab-pane#roles
             = render partial: 'form_roles', object: form, as: :form
+            .form-group= submit_or_save_button
+          .tab-pane#gifts
+            = render partial: 'form_gifts', object: form, as: :form
             .form-group= submit_or_save_button
           .tab-pane#status
             = render partial: 'form_status', object: form, as: :form

@@ -1,0 +1,6 @@
+= hidden_field_tag "person[gift_ids][]", nil
+
+- Gift.all().each do |gift|
+  = check_box_tag "person[gift_ids][]", gift.id, @person.has_gift?(gift), id: dom_id(gift)
+  = label_tag dom_id(gift), gift.name
+  <br/>

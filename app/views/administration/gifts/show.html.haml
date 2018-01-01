@@ -1,0 +1,18 @@
+.col-md-8
+    %h3
+        =@gift.name
+    - if @people.none?
+        No People
+    - else
+        - i = 0
+        - @people.each do |person|
+            %div= link_to person.name, person
+
+.col-md-4
+    .box.box-info
+        .box-header
+            %h3.box-title= 'Rename Gift'
+        .box-body
+            = render partial: 'form'
+
+    = link_to 'Back to All Gifts', administration_gifts_path, class: 'btn btn-warning'
