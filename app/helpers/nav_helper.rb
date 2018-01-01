@@ -65,7 +65,7 @@ module NavHelper
     case params[:controller]
     when 'streams'
       :home
-    when 'people', 'accounts', 'privacies', 'relationships'
+    when 'people', 'accounts', 'privacies', 'relationships', 'meeting_memberships', 'families'
       :profile if @person.try(:persisted?) && (me? || @logged_in.can_update?(@person))
     when 'groups', 'tasks'
       :groups

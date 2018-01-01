@@ -24,6 +24,9 @@ class FamiliesController < ApplicationController
               elsif params[:barcode_id]
                 Family.where(barcode_id: params[:id], deleted: false).first ||
                   Family.where(alternate_barcode_id: params[:id], deleted: false).first
+              elsif params[:person_id]
+                @person = Person.find(params[:person_id])
+                @person.family
               else
                 Family.where(id: params[:id], deleted: false).first
               end

@@ -34,6 +34,7 @@ OneBody::Application.routes.draw do
         post :select
       end
     end
+    resource :family
     resource :meeting_memberships
     resource :stream
     resource :photo
