@@ -9,7 +9,7 @@
       </tr>
       <% @meeting_memberships.each do |membership| %>
       <tr>
-        <td><%= membership.person.name%></td>
+        <td><%= link_to membership.person.name, membership.person%></td>
         <td><%= membership.meeting_membership_type.name%></td>
       </tr>
       <% end %>
