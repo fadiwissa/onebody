@@ -126,6 +126,16 @@
     </td>
   </tr>
 <% end %>
+<%= show_attribute(:marital_status) do %>
+  <tr>
+    <td>
+      Marital Status
+    </td>
+    <td>
+      <%= @person.marital_status %>
+    </td>
+  </tr>
+<% end %>
 <% unless @person.child? %>
   <%= show_attribute(:anniversary) do %>
     <tr>
